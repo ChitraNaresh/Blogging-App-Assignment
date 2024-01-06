@@ -1,8 +1,8 @@
 const express = require("express");
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
-const User = require("../models/userModel");
 const router = express.Router();
+const User = require("../models/userModel");
 
 router.post("/signup",async(req,res)=>{
     const {firstname,secondname,gmail,password}=req.body
@@ -23,22 +23,6 @@ router.post("/signup",async(req,res)=>{
         console.log(err.message)
       })
 })
-
-
-const verifyJWT = (req, res, next   ) => {
-    const authHeader = req.headers["authorization"];
-    const token = authHeader && authHeader.split(" ")[1];
-    if (token === null) {
-    return res.status(401).json({ error: "No access token" });
-    }
-    jwt.verify(token, "BHGT6FRT7TFr4EDW", (err, user) => {
-    if (err) {
-    return res.status(403).json({ error: "Access token is invalid" });
-    }
-    req.user = user.id;
-    next();
-    });
-    };
 
 // signin
 

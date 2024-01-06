@@ -1,0 +1,40 @@
+
+POST http://localhost:5004/api/blog/create-blog
+Content-Type: application/json 
+Authorization: `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWNvbmRuYW1lIjoiTmFyZXNoIiwiaWF0IjoxNzA0NTE4NzAzfQ.v1E7ILlfC0DZwYwU86smPrUpLtu3N60GlZh1fHFmgyI}`
+
+{
+    "imageUrl":"https://firebasestorage.googleapis.com/v0/b/blogging-website-8a2ca.appspot.com/o/images%2FScreenshot%20(26).png?alt=media&token=e729e93e-ad33-4a97-8263-bbe5c150e750",
+    "title":"Hello Bro6",
+    "description":"Note that the development build is not optimized."
+}
+
+
+# GET http://localhost:5004/api/blog/all-blogs 
+
+# GET http://localhost:5004/api/blog/get-blog/6597ea0e2642a4ca3d60cdbc
+# PUT  http://localhost:5004/api/blog/update-blog/6597e82ccf435ff16bf9819f
+# Content-Type: application/json
+
+# {
+#     "imageUrl":"https://firebasestorage.googleapis.com/v0/b/blogging-website-8a2ca.appspot.com/o/images%2FScreenshot%20(26).png?alt=media&token=e729e93e-ad33-4a97-8263-bbe5c150e750",
+#     "title":"Hello",
+#     "description":"Note that the development build is not optimized."
+# }
+
+# DELETE http://localhost:5004/api/blog/delete-blog/6598495868e9673b3befca0c
+
+# POST http://localhost:5004/api/user/signin
+# Content-Type: application/json
+
+# {
+#     "gmail":"nnaresh8404@gmail.com",
+#     "password":"Naresh6916"
+# }
+
+# {
+#     "firstname":"Chitra",
+#     "secondname":"Naresh",
+#     "gmail":"nnaresh8404@gmail.com",
+#     "password":"Naresh6916"
+# }

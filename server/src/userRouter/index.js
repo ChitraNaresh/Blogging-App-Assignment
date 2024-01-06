@@ -1,5 +1,5 @@
 const express = require("express");
-const bcrypt=require("bcrypt")
+const bcryptjs=require("bcryptjs")
 const jwt=require("jsonwebtoken")
 const router = express.Router();
 const User = require("../models/userModel");
@@ -8,7 +8,7 @@ router.post("/signup",async(req,res)=>{
     const {firstname,secondname,gmail,password}=req.body
     console.log(req.body,100)
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcryptjs.hash(password, 10);
 
     const newUser = new User({
         firstname,
@@ -35,7 +35,7 @@ router.post('/signin', async (req, res) => {
       return res.status(401).json({ message: 'Invalid gmail' });
     }
   
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await bcryptjs.compare(password, user.password);
   
     if (!passwordMatch) {
       return res.status(401).json({ message: 'Invalid password' });
